@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome to Max's Blog</title>
+</head>
+<body>
+ <!-- Site Header -->
+<h1>Hi. I am Max. i love you so much!</h1>
+
+<!-- Blog Post -->
+<h2>My First Blog Post</h2>
+<p>i want u. come on....</p>
+
+<!-- Like And Comment -->
+<button>Like</button>
+<h2>Leave a Comment</h2>
+<form action="{% url 'blog:home_page' %}" method="POST">
+{% csrf_token %}
+<input type="text" placeholder="Please Enter Your username" name="username"><br><br>
+	<textarea placeholder="Please Enter Your Comment"></textarea>
+	<input type="submit" name="Post Me!">
+</form>
+User {{comment.user}} says: {{comment.comment}}
+
+</body>
+</html>
